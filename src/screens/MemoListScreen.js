@@ -20,7 +20,7 @@ class MemoListScreen extends React.Component {
       .then((snapshot) => {
         const memoList = [];
         snapshot.forEach((doc) => {
-          memoList.push(doc.data());
+          memoList.push({ ...doc.data(), key: doc.id });
         });
         this.setState({ memoList });
       })
@@ -36,7 +36,7 @@ class MemoListScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <MemoList memoList={this.state.memoList} navigation={this.props.navigation.state} />
+        <MemoList memoList={this.state.memoList} navigation={this.props.navigation} />
         <CircleButton name="plus" onPress={this.handlePress.bind(this)} />
       </View>
     );
