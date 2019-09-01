@@ -8,8 +8,8 @@ class LoginScreen extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: '',
-      password: '',
+      email: 'test@test.com',
+      password: 'password',
     };
   }
 
@@ -17,7 +17,7 @@ class LoginScreen extends React.Component {
     firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
       .then((user) => {
         console.log('success', user);
-        this.props.navigation.navigate('Home')
+        this.props.navigation.navigate('Home');
       })
       .catch((error) => {
         console.log('error', error);
