@@ -13,8 +13,6 @@ import ENV from './env.json';
 // eslint-disable-next-line quotes
 require("firebase/firestore");
 
-// import WelcomeScreen from './src/screens/WelcomeScreen';
-
 const firebaseConfig = {
   apiKey: ENV.FIREBASE_API_KEY,
   authDomain: ENV.FIREBASE_AUTH_DOMAIN,
