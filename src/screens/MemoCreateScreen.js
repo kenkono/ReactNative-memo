@@ -23,8 +23,7 @@ class MemoCreateScreen extends React.Component {
       .then(() => {
         this.props.navigation.goBack();
       })
-      .catch((error) => {
-        console.log(error);
+      .catch(() => {
       });
   }
 
